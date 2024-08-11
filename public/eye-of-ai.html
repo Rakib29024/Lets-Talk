@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Video Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.min.css">
+    <style>
+        body {
+            /* background: linear-gradient(to right, #08162f, #000000); */
+        }
+    </style>
+</head>
+<body>
+    <div id="notificationContainer"></div>
+
+    <div id="main-container">
+        <div id="room-container">
+            <div class="logo-section">
+                <img id ="logo" src="/assets/img/eye-logo.png" alt="">
+            </div>
+    
+            <div class="row">
+                <input type="text" id="username-input" placeholder="Enter your username">
+            </div>
+            <button id="join-room">Start</button>
+            <div class="my-8">
+                <a href="/" id="letstalk-btn" class="btn-outline">
+                        <img src="/assets/img/logo.png" alt="">
+                    Let's Talk
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="video-container">
+        <div id="remote">
+            <video id="local-video" autoplay muted></video>
+            <div><span id="local-username"></span></div>
+        </div>
+        <div class="text-section">
+            <audio id="audio" controls></audio>
+            <h3 id="video-text">
+                ...
+            </h3>
+        </div>
+        <div id="options">
+            <button id="audio-control-button">
+                Pause
+            </button>
+            <button id="stop-share-screen" style="display:none;">
+                <i class="fa-solid fa-video"></i>
+            </button>
+            <button id="end-call">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="eye-script.min.js"></script>
+</body>
+</html>
